@@ -15,9 +15,9 @@ export default function Page() {
   const router = useRouter();
   const [searchString, setSearchString] = useState('phish');
   const [band, setband] = useState('phish');
-  const [selectedAttraction, setSelectedAttraction] = useState({ id: '', name: '' });
+  const [selectedAttractionID, setSelectedAttractionID] = useState('');
 
-  console.log('dsasdas', selectedAttraction);
+  console.log('dsasdas', selectedAttractionID);
 
   const { data: searchResults, isLoading } = useQuery({
     queryKey: ['band', band],
@@ -27,7 +27,7 @@ export default function Page() {
   const handleSelect = () => {
     router.push({
       pathname: '/item/details',
-      params: { id: selectedAttraction.id, name: selectedAttraction.name },
+      params: { id: selectedAttractionID },
     });
   };
 
@@ -50,8 +50,8 @@ export default function Page() {
             renderItem={({ item }) => (
               <Attraction
                 item={item}
-                selectedAttraction={selectedAttraction}
-                setSelectedAttraction={setSelectedAttraction}
+                selectedAttractionID={selectedAttractionID}
+                setSelectedAttractionID={setSelectedAttractionID}
               />
             )}
           />

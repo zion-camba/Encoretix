@@ -10,7 +10,7 @@ import { AttractionDetails } from '~/interfaces/attractionDetails';
 type SocialsProps = {
   attractionDetails: AttractionDetails | undefined;
   handleOpenSocials: (arg0: string) => void;
-  name: string;
+  name: string | undefined;
 };
 
 const Socials = ({ attractionDetails, handleOpenSocials, name }: SocialsProps) => {

@@ -4,26 +4,21 @@ import React from 'react';
 import { Event } from '~/interfaces/apiresults';
 import CONSTANTS from '~/constants';
 
-type Arg0 = {
-  id: string;
-  name: string;
-};
-
 type AttractionProps = {
   item: Event;
-  selectedAttraction: Arg0;
-  setSelectedAttraction: (arg0: Arg0) => void;
+  selectedAttractionID: string;
+  setSelectedAttractionID: (arg0: string) => void;
 };
 
-const Attraction = ({ item, selectedAttraction, setSelectedAttraction }: AttractionProps) => {
+const Attraction = ({ item, selectedAttractionID, setSelectedAttractionID }: AttractionProps) => {
   return (
-    <TouchableOpacity onPress={() => setSelectedAttraction({ id: item.id, name: item.name })}>
+    <TouchableOpacity onPress={() => setSelectedAttractionID(item.id)}>
       <View
         style={[
           styles.container,
           {
             backgroundColor:
-              selectedAttraction.id === item.id ? CONSTANTS.COLORS.primary_blue : 'white',
+              selectedAttractionID === item.id ? CONSTANTS.COLORS.primary_blue : 'white',
           },
         ]}>
         <Image source={{ uri: item.images[0].url }} resizeMode="cover" style={styles.image} />

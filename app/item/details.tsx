@@ -9,9 +9,8 @@ import Header from '~/components/Header';
 import Socials from '~/components/Socials';
 
 const page = () => {
-  const { id, name } = useLocalSearchParams<{
+  const { id } = useLocalSearchParams<{
     id: string;
-    name: string;
   }>();
 
   const { data: attractionDetails } = useQuery({
@@ -37,7 +36,7 @@ const page = () => {
         <Socials
           handleOpenSocials={handleOpenSocials}
           attractionDetails={attractionDetails}
-          name={name}
+          name={attractionDetails?.name}
         />
         <View style={{ flexDirection: 'row', marginTop: 10 }}>
           <Text>Upcoming Events: </Text>
