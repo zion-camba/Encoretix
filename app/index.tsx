@@ -41,19 +41,21 @@ export default function Page() {
       {!searchResults?._embedded?.attractions && !isLoading && <EpmtyListBanner />}
 
       {searchResults?._embedded?.attractions && (
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          data={searchResults?._embedded?.attractions}
-          renderItem={({ item }) => (
-            <Attraction
-              item={item}
-              selectedAttraction={selectedAttraction}
-              setSelectedAttraction={setSelectedAttraction}
-            />
-          )}
-        />
+        <>
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={searchResults?._embedded?.attractions}
+            renderItem={({ item }) => (
+              <Attraction
+                item={item}
+                selectedAttraction={selectedAttraction}
+                setSelectedAttraction={setSelectedAttraction}
+              />
+            )}
+          />
+          <SelectBtn handleSelect={handleSelect} />
+        </>
       )}
-      <SelectBtn handleSelect={handleSelect} />
     </View>
   );
 }
