@@ -14,7 +14,7 @@ export const getSearchResults = async (query: string): Promise<AttractionsSearch
 
 export const getAttractionDetails = async (query: string): Promise<AttractionDetails> => {
   const response = await fetch(
-    `https://app.ticketmaster.com/discovery/v2/attractions/K8vZ9175BhV.json?apikey=${API_KEY}&id=${query}`
+    `https://app.ticketmaster.com/discovery/v2/attractions/${query}.json?apikey=${API_KEY}`
   );
 
   const data = await response.json();

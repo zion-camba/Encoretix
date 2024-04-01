@@ -17,6 +17,8 @@ export default function Page() {
   const [band, setband] = useState('phish');
   const [selectedAttraction, setSelectedAttraction] = useState({ id: '', name: '' });
 
+  console.log('dsasdas', selectedAttraction);
+
   const { data: searchResults, isLoading } = useQuery({
     queryKey: ['band', band],
     queryFn: () => getSearchResults(band),
