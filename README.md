@@ -11,10 +11,4 @@ npx expo - to run the app
 
 ## Demo
 
-<div style="display: flex; flex-direction: 'row';">
-<img src="./screenshots/calls.gif" width=40%>
-<img src="./screenshots/chats.gif" width=40%>
-<img src="./screenshots/contacts.gif" width=40%>
-<img src="./screenshots/messages.gif" width=40%>
-
 </div>
